@@ -1,0 +1,119 @@
+<head>
+    <link rel="stylesheet" type="text/css" href="https://fluig.totvs.com/style-guide/css/fluig-style-guide.min.css">
+    <link rel="stylesheet" href="style/styles.css">
+    <script src="https://fluig.totvs.com/portal/resources/js/jquery/jquery.js"></script>
+    <script src="https://fluig.totvs.com/portal/resources/js/jquery/jquery-ui.min.js"></script>
+    <script src="https://fluig.totvs.com/portal/resources/js/mustache/mustache-min.js"></script>
+    <script src="https://fluig.totvs.com/style-guide/js/fluig-style-guide.min.js"></script>
+    <script src="js/produto.js"></script>
+    <script src="js/cep.js"></script>
+    <script src="js/anexo.js"></script>
+    <script src="js/form.js"></script>
+    </head>
+    <body>
+        <div class="fluig-style-guide">
+            <form role="form" id="productForm">
+                <div class="container-fluid py-3">
+                    <header class="text-center">
+                        <h1 class="display-6 fs-color-black">CADASTRO FORNECEDOR/PRODUTO</h1>
+                    </header>
+                </div>x
+                <h3 style="margin-bottom: 0px;" class="container fs-color-white titulo-container">Dados do Fornecedor</h3>
+                <section style="border-color: black;" class="container fs-color-black table-bordered form-container" >
+                    <div class="row">
+                        <div class="form-group col-xs-8">
+                            <label for="razaoSocial">Razão Social:</label>
+                            <input type="text" class="form-control" id="razaoSocial" name="razaoSocial" required><br>
+                        </div>
+                        <div class="form-group col-xs-4">
+                            <label for="cnpj">CNPJ:</label>
+                            <input type="text" class="form-control" id="cnpj" name="cnpj" required><br>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-xs-8 ">
+                            <label for="nomeFantasia">Nome Fantasia:</label>
+                            <input type="text" class="form-control" id="nomeFantasia" name="nomeFantasia" required><br>
+                        </div> 
+                        <div class="form-group col-xs-4">
+                            <label for="inscricaoEstadual">inscricão Estadual:</label>
+                            <input type="text" class="form-control" id="inscricaoEstadual" name="inscricaoEstadual"><br>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-xs-5">
+                            <label for="cep">CEP:</label>
+                            <input type="text" class="form-control" id="cep" name="cep" required><br>
+                        </div>
+                        <div class="col-xs-3"></div>
+                        <div class="form-group col-xs-4">
+                            <label for="inscricaoMunicipal">Inscrição Municipal:</label>
+                            <input type="text" class="form-control" id="inscricaoMunicipal" name="inscricaoMunicipal"><br>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-xs-8">
+                            <label for="endereco">Endereço :</label>
+                            <input type="text" class="form-control" id="endereco" name="endereco"><br>
+                        </div>
+                        <div class="form-group col-xs-4">
+                            <label for="numero">Número :</label>
+                            <input type="text" class="form-control" id="numero" name="numero"><br>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="complemento">Complemento :</label>
+                        <input type="text" class="form-control" id="complemento" name="complemento"><br>
+                    </div>
+                    <div class="row">
+                    <div class="form-group col-xs-5">
+                        <label for="bairro">Bairro :</label>
+                        <input type="text" class="form-control" id="bairro" name="bairro"><br>
+                    </div>
+                        <div class="form-group col-xs-4">
+                            <label for="municipio">Municipio :</label>
+                            <input type="text" class="form-control" id="municipio" name="municipio"><br>
+                        </div>
+                        <div class="form-group col-xs-3">
+                            <label for="estado">Estado :</label>
+                            <input type="text" class="form-control" id="estado" name="estado"><br>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-xs-6">
+                            <label for="nomeContato">Nome da Pessoa de Contato:</label>
+                            <input type="text" class="form-control" id="nomeContato" name="nomeContato" required><br>
+                        </div>
+                        <div class="form-group col-xs-3">
+                            <label for="telefoneContato">Telefone:</label>
+                            <input type="text" class="form-control" id="telefoneContato" name="telefoneContato" required><br>
+                        </div>
+                        <div class="form-group col-xs-3">
+                            <label for="emailContato">E-mail:</label>
+                            <input type="email" class="form-control" id="emailContato" name="emailContato" required><br>
+                        </div>
+                    </div>
+                </section>
+                <h3 style="margin-bottom: 0px;" class="container fs-color-white titulo-container">Produtos</h3>
+                <section style="border-color: black;" class="container fs-color-black table-bordered form-container">
+                    <div id="produtosContainer">
+                        <!-- Product fields will be dynamically added here -->
+                    </div>
+                    <button style="margin-bottom: 15px; background-color:forestgreen; color: white;" type="button" class="btn btn-default col-xs-12" id="addProduct">Adicionar Produto</button>
+                </section>
+                <h3 style="margin-bottom: 0px;" class="container fs-color-white titulo-container">Anexos</h3>
+                <section style="border-color: black;" class="container fs-color-black table-bordered form-container">
+                    <div id="anexosContainer">
+                        <!-- Product fields will be dynamically added here -->
+                    </div>
+                    <label style="margin-bottom: 15px;margin-top: 15px; background-color:forestgreen; color: white;" for="addAnexo" class="custom-file-upload btn btn-default col-xs-12">
+                        <input type="file" id="addAnexo" class="hidden">
+                        Adicionar Anexo
+                    </label>
+                </section>
+                <div style="margin-top: 15px;" class="container">
+                    <button style="background-color:forestgreen; color: white;" type="submit" class="btn btn-default col-xs-12">Submit</button>
+                </div>
+            </form>
+        </div>
+    </body>
